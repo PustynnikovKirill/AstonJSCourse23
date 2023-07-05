@@ -1,10 +1,12 @@
-Array.prototype.filterArray = function(cb, thisArg) {
-    const newArray = []
-    for (let i = 0; i < this.length; i++) {
-        if (cb.call(thisArg, this[i], i, this)) {
-            newArray.push(this[i])
-        }
+Array.prototype.filterArray = function (callback, thisArg) {
+  const newArray = [];
+
+  for (let i = 0; i < this.length; i++) {
+    if (callback.call(thisArg, this[i], i, this)) {
+      newArray.push(this[i]);
     }
-    return newArray
-}
+  }
+
+  return newArray;
+};
 
